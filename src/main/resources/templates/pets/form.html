@@ -1,0 +1,51 @@
+<!-- src/main/resources/templates/pets/form.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pet.id == null} ? 'Nueva mascota' : 'Editar mascota'"></title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1 th:text="${pet.id == null} ? 'Nueva mascota' : 'Editar mascota'"></h1>
+
+<form th:action="@{/pets/save}" th:object="${pet}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" th:field="*{name}" required/>
+    <br/>
+
+    <label for="species">Especie:</label>
+    <input type="text" id="species" th:field="*{species}" required/>
+    <br/>
+
+    <label for="breed">Raza:</label>
+    <input type="text" id="breed" th:field="*{breed}"/>
+    <br/>
+
+    <label for="age">Edad:</label>
+    <input type="number" id="age" th:field="*{age}" min="0"/>
+    <br/>
+
+    <label for="price">Precio:</label>
+    <input type="number" id="price" th:field="*{price}" step="0.01"/>
+    <br/>
+
+    <label for="description">Descripción:</label>
+    <textarea id="description" th:field="*{description}" rows="3"></textarea>
+    <br/>
+
+    <label for="birthDate">Fecha de nacimiento:</label>
+    <input type="date" id="birthDate" th:field="*{birthDate}"/>
+    <br/>
+
+    <label for="imageUrl">URL de la imagen:</label>
+    <input type="text" id="imageUrl" th:field="*{imageUrl}"/>
+    <br/>
+
+    <button type="submit">💾 Guardar</button>
+    <a th:href="@{/pets}">↩ Volver</a>
+</form>
+</body>
+</html>

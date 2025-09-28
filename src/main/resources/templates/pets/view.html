@@ -1,0 +1,58 @@
+<!-- src/main/resources/templates/pets/view.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles de la mascota</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h1>Detalle de la mascota</h1>
+
+<table border="1" cellpadding="8" cellspacing="0">
+    <tr>
+        <th>ID</th>
+        <td th:text="${pet.id}"></td>
+    </tr>
+    <tr>
+        <th>Nombre</th>
+        <td th:text="${pet.name}"></td>
+    </tr>
+    <tr>
+        <th>Especie</th>
+        <td th:text="${pet.species}"></td>
+    </tr>
+    <tr>
+        <th>Raza</th>
+        <td th:text="${pet.breed}"></td>
+    </tr>
+    <tr>
+        <th>Edad</th>
+        <td th:text="${pet.age}"></td>
+    </tr>
+    <tr>
+        <th>Precio</th>
+        <td th:text="${pet.price}"></td>
+    </tr>
+    <tr>
+        <th>Descripción</th>
+        <td th:text="${pet.description}"></td>
+    </tr>
+    <tr>
+        <th>Fecha de nacimiento</th>
+        <td th:text="${#dates.format(pet.birthDate, 'yyyy-MM-dd')}"></td>
+    </tr>
+    <tr>
+        <th>Imagen</th>
+        <td>
+            <img th:src="${pet.imageUrl}" alt="Imagen de mascota" width="150"/>
+        </td>
+    </tr>
+</table>
+
+<br/>
+<a th:href="@{/pets}">↩ Volver</a>
+<a th:href="@{|/pets/edit/${pet.id}|}">✏️ Editar</a>
+<a th:href="@{|/pets/delete/${pet.id}|}" onclick="return confirm('¿Seguro que deseas eliminar esta mascota?')">🗑️ Eliminar</a>
+</body>
+</html>

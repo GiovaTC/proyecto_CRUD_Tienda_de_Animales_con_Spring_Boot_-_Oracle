@@ -35,7 +35,7 @@
         <td th:text="${pet.age}"></td>
         <td th:text="${pet.price}"></td>
         <td th:text="${pet.description}"></td>
-        <td th:text="${#dates.format(pet.birthDate, 'yyyy-MM-dd')}"></td>
+        <td th:text="${#temporals.format(pet.birthDate, 'yyyy-MM-dd')}"></td>
         <td>
             <img th:src="${pet.imageUrl}" alt="Imagen Mascota" width="100"/>
         </td>

@@ -9,6 +9,8 @@ interfaz web con **Thymeleaf** y conexión a **Oracle** como base de datos.
 
 <img width="2558" height="1079" alt="image" src="https://github.com/user-attachments/assets/dafc23ec-b36c-4a36-b6d6-87d79708beec" />
 
+<img width="2556" height="1079" alt="image" src="https://github.com/user-attachments/assets/1e00a552-14a8-42c1-9a60-60de8061ffea" />
+
 Incluye:
 
 - `pom.xml` con dependencia del driver Oracle (**ojdbc11**).
